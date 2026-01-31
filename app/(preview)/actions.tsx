@@ -46,7 +46,7 @@ const sendMessage = async (message: string) => {
   const textComponent = <TextStreamMessage content={contentStream.value} />;
 
   const { value: stream } = await streamUI({
-    model: openai("gpt-4o"),
+    model: openai("gpt-4.1-nano-2025-04-14"),
     system: `\
     Actúa como un Agente Virtual de Ventas de vehículos Chevrolet.
 
