@@ -16,6 +16,7 @@
     "d3-scale": "^4.0.2",
     "framer-motion": "^11.3.19",
     "next": "14.2.5",
+    "openai": "^4.104.0",
     "react": "^18",
     "react-dom": "^18",
     "react-use": "^17.5.1",
