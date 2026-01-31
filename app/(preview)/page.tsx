@@ -18,20 +18,6 @@ export default function Home() {
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
 
-  const suggestedActions = [
-    { title: "View all", label: "my cameras", action: "View all my cameras" },
-    { title: "Show me", label: "my smart home hub", action: "Show me my smart home hub" },
-    {
-      title: "How much",
-      label: "electricity have I used this month?",
-      action: "Show electricity usage",
-    },
-    {
-      title: "How much",
-      label: "water have I used this month?",
-      action: "Show water usage",
-    },
-  ];
 
   return (
     <div className="flex flex-row justify-center pb-20 h-dvh bg-white dark:bg-zinc-900">
@@ -44,68 +30,16 @@ export default function Home() {
             <motion.div className="h-[350px] px-4 w-full md:w-[500px] md:px-0 pt-20">
               <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
                 <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
-                  <VercelIcon size={16} />
-                  <span>+</span>
-                  <MasonryIcon />
+                  
                 </p>
                 <p>
-                  The streamUI function allows you to stream React Server
-                  Components along with your language model generations to
-                  integrate dynamic user interfaces into your application.
-                </p>
-                <p>
-                  {" "}
-                  Learn more about the{" "}
-                  <Link
-                    className="text-blue-500 dark:text-blue-400"
-                    href="https://sdk.vercel.ai/docs/ai-sdk-rsc/streaming-react-components"
-                    target="_blank"
-                  >
-                    streamUI{" "}
-                  </Link>
-                  hook from Vercel AI SDK.
+                  Venta de carros Chevrelot
                 </p>
               </div>
             </motion.div>
           )}
           {messages.map((message) => message)}
           <div ref={messagesEndRef} />
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-2 w-full px-4 md:px-0 mx-auto md:max-w-[500px] mb-4">
-          {messages.length === 0 &&
-            suggestedActions.map((action, index) => (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.01 * index }}
-                key={index}
-                className={index > 1 ? "hidden sm:block" : "block"}
-              >
-                <button
-                  onClick={async () => {
-                    setMessages((messages) => [
-                      ...messages,
-                      <Message
-                        key={messages.length}
-                        role="user"
-                        content={action.action}
-                      />,
-                    ]);
-                    const response: ReactNode = await sendMessage(
-                      action.action,
-                    );
-                    setMessages((messages) => [...messages, response]);
-                  }}
-                  className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col"
-                >
-                  <span className="font-medium">{action.title}</span>
-                  <span className="text-zinc-500 dark:text-zinc-400">
-                    {action.label}
-                  </span>
-                </button>
-              </motion.div>
-            ))}
         </div>
 
         <form
