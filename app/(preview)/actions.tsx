@@ -47,7 +47,7 @@ const sendMessage = async (message: string) => {
 
   const { value: stream } = await streamUI({
     model: openai("gpt-4.1-nano-2025-04-14"),
-    system: `\
+    system: `\ 
     Actúa como un Agente Virtual de Ventas de vehículos Chevrolet.
 
     Tu objetivo es orientar y asesorar a potenciales clientes interesados en comprar un vehículo Chevrolet, ayudándolos a identificar el modelo que mejor se ajusta a sus necesidades, sin inventar información ni realizar promesas comerciales.
