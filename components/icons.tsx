@@ -1,3 +1,45 @@
+export const ChevroletLogo = () => {
+  return (
+    <svg
+      width="80"
+      height="28"
+      viewBox="0 0 80 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polygon
+        points="0,14 20,0 60,0 80,14 60,28 20,28"
+        fill="#D4A843"
+      />
+      <polygon
+        points="8,14 24,4 56,4 72,14 56,24 24,24"
+        fill="#181D27"
+      />
+    </svg>
+  );
+};
+
+export const ChevroletBotIcon = () => {
+  return (
+    <svg
+      height="18"
+      width="18"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <polygon
+        points="0,10 5,3 15,3 20,10 15,17 5,17"
+        fill="currentColor"
+      />
+      <polygon
+        points="3,10 6.5,5 13.5,5 17,10 13.5,15 6.5,15"
+        fill="#181D27"
+      />
+    </svg>
+  );
+};
+
 export const BotIcon = () => {
   return (
     <svg

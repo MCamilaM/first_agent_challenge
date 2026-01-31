@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BotIcon, UserIcon } from "./icons";
+import { ChevroletBotIcon, UserIcon } from "./icons";
 import { ReactNode } from "react";
 import { StreamableValue, useStreamableValue } from "ai/rsc";
 import { Streamdown } from "streamdown";
@@ -19,12 +19,12 @@ export const TextStreamMessage = ({
       initial={{ y: 5, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <div className="size-[24px] flex flex-col justify-center items-center flex-shrink-0 text-zinc-400">
-        <BotIcon />
+      <div className="size-[24px] flex flex-col justify-center items-center flex-shrink-0 text-[#D4A843]">
+        <ChevroletBotIcon />
       </div>
 
       <div className="flex flex-col gap-1 w-full">
-        <div className="text-zinc-800 dark:text-zinc-300 flex flex-col gap-4">
+        <div className="text-zinc-200 flex flex-col gap-4">
           <Streamdown>{text}</Streamdown>
         </div>
       </div>
@@ -45,12 +45,12 @@ export const Message = ({
       initial={{ y: 5, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
     >
-      <div className="size-[24px] flex flex-col justify-center items-center flex-shrink-0 text-zinc-400">
-        {role === "assistant" ? <BotIcon /> : <UserIcon />}
+      <div className="size-[24px] flex flex-col justify-center items-center flex-shrink-0 text-[#D4A843]">
+        {role === "assistant" ? <ChevroletBotIcon /> : <UserIcon />}
       </div>
 
       <div className="flex flex-col gap-1 w-full">
-        <div className="text-zinc-800 dark:text-zinc-300 flex flex-col gap-4">
+        <div className="text-zinc-200 flex flex-col gap-4">
           {content}
         </div>
       </div>

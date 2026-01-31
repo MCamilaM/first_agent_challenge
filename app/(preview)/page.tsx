@@ -5,8 +5,7 @@ import { useActions } from "ai/rsc";
 import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
-import { MasonryIcon, VercelIcon } from "@/components/icons";
-import Link from "next/link";
+import { ChevroletLogo } from "@/components/icons";
 
 export default function Home() {
   const { sendMessage } = useActions();
@@ -20,20 +19,30 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-row justify-center pb-20 h-dvh bg-white dark:bg-zinc-900">
+    <div className="flex flex-row justify-center pb-20 h-dvh bg-[#181D27]">
       <div className="flex flex-col justify-between gap-4">
         <div
           ref={messagesContainerRef}
           className="flex flex-col gap-3 h-full w-dvw items-center overflow-y-scroll"
         >
           {messages.length === 0 && (
-            <motion.div className="h-[350px] px-4 w-full md:w-[500px] md:px-0 pt-20">
-              <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
-                <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
-                  
+            <motion.div
+              className="h-[400px] px-4 w-full md:w-[500px] md:px-0 pt-20"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="gold-border rounded-xl p-8 flex flex-col gap-5 items-center text-center gold-glow bg-[#1E2636]">
+                <ChevroletLogo />
+                <h1 className="text-xl font-bold text-[#D4A843] tracking-widest">
+                  CHEVROLET
+                </h1>
+                <p className="text-sm text-zinc-300">
+                  Asistente Virtual de Ventas
                 </p>
-                <p>
-                  Venta de carros Chevrelot
+                <p className="text-xs text-zinc-500 max-w-sm leading-relaxed">
+                  Bienvenido. Estoy aquí para ayudarte a encontrar el vehículo
+                  Chevrolet ideal para ti. Escríbeme lo que necesites.
                 </p>
               </div>
             </motion.div>
@@ -59,8 +68,8 @@ export default function Home() {
         >
           <input
             ref={inputRef}
-            className="bg-zinc-100 rounded-md px-2 py-1.5 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
-            placeholder="Send a message..."
+            className="bg-[#1E2636] border border-[#2A3347] rounded-lg px-4 py-2.5 w-full outline-none text-zinc-200 placeholder:text-zinc-500 md:max-w-[500px] max-w-[calc(100dvw-32px)] focus:border-[#D4A843] focus:ring-1 focus:ring-[#D4A843]/30 transition-colors"
+            placeholder="Escribe tu mensaje..."
             value={input}
             onChange={(event) => {
               setInput(event.target.value);
